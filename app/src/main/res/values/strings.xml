@@ -1,3 +1,19 @@
 <resources>
-    <string name="app_name">DroidBountyHunter-Expert-Kotlin</string>
+    <string name="app_name">DroidBountyHunter</string>
+    <string name="detail_message_label">Mensaje…</string>
+    <string name="detail_capture_button">Capturar</string>
+    <string name="detail_delete_button">Eliminar</string>
+    <string name="detail_fugitive_still_not_catch">El fugitivo sigue suelto…</string>
+    <string name="detail_fugitive_in_jail">Atrapado!!!</string>
+    <string name="add_fugitive_title_screen">Nuevo Fugitivo</string>
+    <string name="add_fugitive_name_hint">Nombre del Fugitivo</string>
+    <string name="add_save_fugitive_button">Guardar</string>
+    <string name="about_us_develop_by_label">Desarrollado por:</string>
+    <string name="about_us_developer_name_label">Giovani González</string>
+    <string name="about_us_developed_year_label">2020</string>
+    <string name="about_us_company_name_label">D.W. Training</string>
+    <string name="title_fugitives">Fugitivos</string>
+    <string name="title_catch">Atrapados</string>
+    <string name="title_about_us">Acerca de</string>
+    <string name="action_add_fugitive">Agregar Fugitivo</string>
 </resources>
