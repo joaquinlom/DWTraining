@@ -67,7 +67,7 @@ class PictureTools {
             @Throws(IOException::class)
             get() {
                 val mediaStorageDir = File(
-                    Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).path,
+                    instance?.context?.getExternalFilesDir(Environment.DIRECTORY_PICTURES)?.path,
                     "DroidBountyHunterPictures"
                 )
 
