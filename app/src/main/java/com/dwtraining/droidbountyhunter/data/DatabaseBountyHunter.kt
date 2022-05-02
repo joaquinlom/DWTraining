@@ -1,5 +1,6 @@
 package com.dwtraining.droidbountyhunter.data
 
+import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
@@ -91,6 +92,7 @@ class DatabaseBountyHunter(private val context: Context) {
         close()
     }
 
+    @SuppressLint("Range")
     fun obtainFugitives(status: Int) : Array<Fugitive> {
         var fugitives: Array<Fugitive> = arrayOf()
         val dataCursor = querySQL("SELECT * FROM $TABLE_NAME_FUGITIVOS WHERE " +

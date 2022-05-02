@@ -12,6 +12,7 @@ import android.graphics.Matrix
 import android.net.Uri
 import android.os.Build
 import android.os.Environment
+import android.provider.MediaStore.Files.FileColumns.MEDIA_TYPE_IMAGE
 import android.util.Log
 import androidx.core.app.ActivityCompat
 import androidx.core.content.FileProvider
@@ -31,7 +32,6 @@ class PictureTools {
     private lateinit var context: Context
 
     companion object {
-        const val MEDIA_TYPE_IMAGE = 1
         private const val REQUEST_CODE = 1707
         private val TAG = PictureTools::class.java.simpleName
         private var BASE_PATH = ""
@@ -51,7 +51,7 @@ class PictureTools {
         }
 
         /** Create a file Uri for saving an image or video  */
-        fun getOutputMediaFileUri(context: Context): Uri? {
+        fun getOutputMediaFileUri(context: Context, type: Int = MEDIA_TYPE_IMAGE): Uri? {
             getInstance()?.context = context
             return try {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {

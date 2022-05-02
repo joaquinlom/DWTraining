@@ -10,6 +10,7 @@ import android.widget.ListView
 import androidx.fragment.app.Fragment
 import com.dwtraining.droidbountyhunter.R
 import com.dwtraining.droidbountyhunter.activities.DetailActivity
+import com.dwtraining.droidbountyhunter.activities.HomeActivity
 import com.dwtraining.droidbountyhunter.models.Fugitive
 import kotlinx.android.synthetic.main.fragment_names_list.*
 
@@ -26,7 +27,7 @@ class NamesListFragment : Fragment() {
         updateNames(namesListView, status)
         namesListView.setOnItemClickListener { _, _, position, _ -> // adapterView, view, position, id ->
             val intent = Intent(context, DetailActivity::class.java)
-            startActivityForResult(intent, REQUEST_CODE)
+            (requireActivity() as HomeActivity).getActivityResult.launch(intent)
         }
     }
 
@@ -49,6 +50,5 @@ class NamesListFragment : Fragment() {
 
     companion object {
         const val SECTION_NUMBER = "section_number"
-        private const val REQUEST_CODE = 0
     }
 }

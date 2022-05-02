@@ -6,15 +6,21 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.activity.result.contract.ActivityResultContracts
 import com.dwtraining.droidbountyhunter.R
 import com.dwtraining.droidbountyhunter.adapters.SectionsPagerAdapter
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
 
     private var pagerAdapter: SectionsPagerAdapter? = null
+    val getActivityResult =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            if (it.resultCode == Activity.RESULT_OK) {
+                updateAllLists()
+            }
+        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,13 +43,6 @@ class HomeActivity : AppCompatActivity() {
 
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        when (requestCode) {
-            REQUEST_CODE_ADD_FUGITIVE -> if (resultCode == Activity.RESULT_OK) { updateAllLists() }
-        }
-    }
-
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu_home, menu)
@@ -60,10 +59,6 @@ class HomeActivity : AppCompatActivity() {
 
     private fun goToAddFugitiveActivity() {
         val intent = Intent(this, AddFugitiveActivity::class.java)
-        startActivityForResult(intent, REQUEST_CODE_ADD_FUGITIVE)
-    }
-
-    companion object {
-        private const val REQUEST_CODE_ADD_FUGITIVE = 0
+        getActivityResult.launch(intent)
     }
 }
