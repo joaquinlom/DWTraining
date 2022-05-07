@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <ImageView
+        android:id="@+id/pictureFugitive"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@id/labelMessage"
+        android:layout_centerHorizontal="true"
+        android:src="@android:drawable/ic_menu_gallery"
+        android:contentDescription="@string/content_description_image_fugitive"/>
+
+    <TextView
+        android:id="@+id/labelMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/detail_message_label"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/buttonCapture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="30dp"
+        android:minWidth="100dp"
+        android:text="@string/detail_capture_button"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/pictureFugitive"
+        android:layout_centerHorizontal="true"
+        android:onClick="onCaptureFugitive"/>
+
+    <Button
+        android:id="@+id/buttonDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="30dp"
+        android:minWidth="100dp"
+        android:text="@string/detail_delete_button"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+        android:layout_below="@+id/buttonCapture"
+        android:layout_centerHorizontal="true"
+        android:onClick="onDeleteFugitive"/>
+    <Button
+        android:id="@+id/buttonTakePicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/detail_fugitive_take_picture"
+        android:layout_below="@+id/buttonDelete"
+        android:layout_centerHorizontal="true"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+        android:onClick="takePicture"/>
+
+</RelativeLayout>

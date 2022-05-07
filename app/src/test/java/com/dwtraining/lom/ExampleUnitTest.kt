@@ -1,4 +1,4 @@
-package com.dwtraining.droidbountyhunter
+package com.dwtraining.lom
 
 import org.junit.Test
 
